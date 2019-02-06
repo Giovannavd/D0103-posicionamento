@@ -1,0 +1,91 @@
+ body { 
+     margin: 0;
+ }
+    /* background-color: cadetblue;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+p {
+    /* --em: tamanho de acordo com a fonte do navegador => valor relativo ao pai
+    --rem: valor relativo ao navegador inteiro, não ao pai */
+    /* font-size: 1em;
+    text-align: center; */
+
+
+/* div{
+    /* config padrão: largura total da página e altura do conteúdo */
+
+    /* border= criar borda: grossura da linha, tipo de linha(completa, tracejada,etc), cor  */
+    /* border: 1px dashed black;
+    height: 300px; */ 
+    /* margin: 1 valor: geral; 2 valores: 1º cima-baixo 2º direita-esquerda; 3 valores: 1º cima, 2º direita-esquerda, 3º baixo; 4 valores: sentido horario  margin: auto jogar o elemento para o centro da tela e zera cima-baixo*/
+    
+    /* --unidades de medida=> variáveis: auto, porcentagem (em relação ao pai, no caso o body)
+    -vw (view width) e vh (height view)[não recomendável]: tamaho da tela é a --DICA: deixar width e height com a mesma unidade de medida; usar os dois= cortar imagem, só uma= mexer no tamanho */
+    /* margin: 15px;
+    width: 300px;
+} */
+
+/* background-position: center => centraliza a imagem
+background-size: cover => encosta nas laterais
+se a imagem é muito pequena, vai repetir, então, background-repeat: no-repeat */
+/* .banner {
+    background-image: url (https://dikxrpw3rdepo.cloudfront.net/wp-content/uploads/2017/01/tbs2_ost_interior_2560x1440.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */ 
+
+
+/* criando a coluna */
+.grid {
+    display:grid;
+    grid-template-rows: repeat(4, auto);
+    /* -unidades de medidas: fr= fração da altura da tabela */
+    grid-template-columns: repeat(4, 25vw);
+   
+    /* desenhar a tabela=> ""= linhas espaço= coluna */
+    grid-template-areas:
+    "header header header header"
+    "main main . asidebar"
+    "main main . ."
+    "footer footer footer footer";
+
+}
+/* nomeando as partes da coluna */
+header {
+    align-items: center;
+    grid-area: header;
+    background-color: olive;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin: 0;
+}
+
+header nav {
+    justify-content: space-around;
+    display: flex;
+    width: 30%;
+}
+
+header h3{
+    color: white
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+}
+main {
+    grid-area: main;
+    background-color:darkorange;
+}
+.asidebar {
+    grid-area: asidebar;
+    background-color: chocolate;
+}
+footer {
+    grid-area: footer;
+    background-color: darkgoldenrod;
+}
